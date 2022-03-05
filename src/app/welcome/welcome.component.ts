@@ -9,15 +9,17 @@ import { Router } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
   
-  username: any= '';
+
   constructor(private messageservice: MessageService,private cookie:CookieService, private route: Router) {
     
    }
-  ngOnInit(): void {
-    this.username = this.messageservice.getMessage()
-  }
+  username :string = this.messageservice.reMessage();
+
   onBack(){
-    this.route.navigate(['signin'])
+    this.route.navigate(['signin']);
   }
+
+  ngOnInit(): void {
+  };
 
 }

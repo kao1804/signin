@@ -11,27 +11,21 @@ import { Router } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private messageservice : MessageService, private cookie: CookieService,private router: Router) {
-   }
-   email:  FormControl = new FormControl('',Validators.required);
-   password: FormControl = new FormControl('');
-  ngOnInit(): void { }
-  onClick(){
-    this.messageservice.setMessage(this.email.value);
+
+  contact = new FormGroup({
+    email: new FormControl('', Validators.required),
+    password: new FormControl(''),
+  });
+  constructor(private messageservice : MessageService,private router: Router) {
+   };
+ 
+
+  onSubmit(){
+    console.log(this.contact.value);
+    this.messageservice.Message(this.contact.controls.email.value);
     this.router.navigate(['welcome']);
     throw Error("something is wrong");
-    
-  }
-   
-
-
-
-  // onSubmit(form: any){
-  //   // console.warn(this.contact.value);
-  //   this.messageservice.setMessage(this.email.value);
-  //   // this.messageservice.setMessage(this.contact.get('email').value);
-  //   throw Error("something is wrong")
-   
-  // }
+  };
+  ngOnInit(): void { };
 
 }

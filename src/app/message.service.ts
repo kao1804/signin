@@ -4,17 +4,16 @@ import { Customer } from './customer';
   providedIn: 'root'
 })
 export class MessageService {
- username :string = '';  
+ private username :string = '';  
 
 
   constructor() { }
-  setMessage(message:string){
-   this.username = message
+  Message(message:string){
+   this.username = message;
     
   }
-  getMessage()  {
-    return this.username
-    
+  reMessage()  {
+    return this.username;
   }
   
 }
