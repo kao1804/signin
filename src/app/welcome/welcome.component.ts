@@ -8,18 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  
+  username :string = '';
 
   constructor(private messageservice: MessageService,private cookie:CookieService, private route: Router) {
-    
+    this.username = this.messageservice.username;
    }
-  username :string = this.messageservice.reMessage();
+   
 
   onBack(){
     this.route.navigate(['signin']);
   }
 
   ngOnInit(): void {
-  };
+   
+  }
 
 }
