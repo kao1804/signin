@@ -13,7 +13,7 @@
         <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" required>
       </div>
 
-       <div class="alert" role="alert" *ngIf="contact.controls.email?.errors?.required">
+       <div class="alert" role="alert" *ngIf="contact.controls.email?.errors?.required && contact.controls.email.invalid && contact.controls.email?.touched">
         Email is required
       </div>
 
@@ -22,9 +22,12 @@
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1"  formControlName="password"  >
+        <input type="password" class="form-control" id="exampleInputPassword1"  formControlName="password" required>
+        <div class="alert" role="alert" *ngIf="contact.controls.password?.errors?.required && contact.controls.password?.touched ">
+          Password is required
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary"  >Submit</button>
+      <button type="submit" class="btn btn-primary" [disabled]="contact.invalid" >Submit</button>
 
     </form>
   </div>

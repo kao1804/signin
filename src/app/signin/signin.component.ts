@@ -13,8 +13,8 @@ export class SigninComponent implements OnInit {
 
   
   contact = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl(''),
+    email: new FormControl('', [Validators.required,Validators.email]),
+    password: new FormControl('',Validators.required),
   });
   constructor(private messageservice : MessageService,private router: Router) {
    }
@@ -22,10 +22,10 @@ export class SigninComponent implements OnInit {
 
   onSubmit(){
     console.log(this.contact.value);
-    this.messageservice.username = this.contact.controls.email.value;
-    this.router.navigate(['welcome']);
+    // this.messageservice.username = this.contact.controls.email.value;
+    this.router.navigate(['welcome'],{queryParams:{data: this.contact.controls.email.value}});
+  }
 
-  };
   ngOnInit(): void { }
 
 }
