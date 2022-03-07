@@ -13,8 +13,11 @@
         <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" required>
       </div>
 
-       <div class="alert" role="alert" *ngIf="contact.controls.email?.errors?.required && contact.controls.email.invalid && contact.controls.email?.touched">
+       <div class="alert" role="alert" *ngIf="contact.controls.email?.errors?.required   && contact.controls.email?.touched">
         Email is required
+      </div>
+      <div class="alert1" *ngIf="contact.controls.email.value !==''&& contact.controls.email?.untouched && contact.controls.email?.invalid ">
+        Email is invalid
       </div>
 
       <div>
