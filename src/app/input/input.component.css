@@ -1,0 +1,18 @@
+h1{
+    font-size: 24px;
+    color: white;
+}
+h5{
+    font-size: 14px;
+    color:gray;
+}
+.form-label{
+    color: white;
+}
+.alert{
+    color: palevioletred;
+    margin: 0;
+}
+.alert1{
+    color: yellow;
+}

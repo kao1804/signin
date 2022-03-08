@@ -9,8 +9,10 @@
             <div class="mb-3" >
               <label for="exampleInputEmail1" class="form-label"  >Welcome {{username}}</label>
             </div>
-            <button type="submit" class="btn btn-primary" (click)="onBack()">Back</button>
-          
+            <!-- <button type="submit" class="btn btn-primary" (click)="onBack()">Back</button> -->
+            <app-button [text]="'Back'" (click)="onBack()">Back</app-button>
+      
+            
           </form>
         </form>
       </div>
