@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-
+  submit: string = "Submit";
   
   contact = new FormGroup({
     email: new FormControl('', [Validators.required,Validators.email]),

@@ -1,6 +1,6 @@
 
 <div>
-    <button type="submit" class="btn btn-primary"  [disabled] = "word" >{{text}}</button>
+    <button type= {{type}} class="btn btn-primary"  [disabled]="disable"  (click)="onClick()" >{{text}}</button>
 </div>
 
 
