@@ -8,7 +8,8 @@ import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() text: any;
-  @Input() word :any;
+  @Input() word : boolean = false;
+  @Input() btn : string = "";
 
   constructor() {
      
