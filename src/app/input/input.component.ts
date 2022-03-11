@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MessageService } from '../message.service';
 import { CookieService } from 'ngx-cookie-service';
-import { FormControl, FormGroup ,  Validators } from '@angular/forms';
+import { FormControl, FormControlName, FormGroup ,  Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,13 +12,11 @@ import { Router } from '@angular/router';
 export class InputComponent implements OnInit {
 
   @Input() Contact: any = FormGroup;
-  @Output() login: EventEmitter<any> = new EventEmitter()
+  @Input() require : boolean = false;
+  @Input() Name:any = FormControlName ;
 
   constructor(private router: Router) { }
   
-  Submit(){
-    this.login.emit(this.Contact.value)
-  };
 
   ngOnInit(): void {
   } 
