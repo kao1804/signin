@@ -14,9 +14,9 @@
             [id]="type"
             [title]="emailAdress"
             [formGroup]="contact"
-            [name]="'email'"
+            [name]="type"
             [require]="true"
-            [placeHolder]="'Email address'"
+            [placeHolder]="emailAdress"
           ></app-input>
         </div>
 
@@ -31,6 +31,15 @@
         >
           Email is required
         </div>
+        <div
+          class="alert"
+          role="alert"
+          *ngIf="
+            contact.controls.email?.invalid && contact.controls.email?.touched
+          "
+        >
+          Must have at least 4 character
+        </div>
 
         <div>
           <h5>We'll never share your email with anyone else.</h5>
@@ -41,10 +50,10 @@
             [title]="emailPassword"
             [id]="password"
             [formGroup]="contact"
-            [name]="'password'"
-            [placeHolder]="'Password'"
+            [name]="password"
+            [placeHolder]="emailPassword"
             [require]="true"
-            [type] ="password"
+            [type]="password"
           ></app-input>
 
           <div
@@ -63,6 +72,7 @@
           [title]="submit"
           [disable]="contact.invalid"
           (actionClick)="onSubmit()"
+          [btnStyle]="primary"
         ></app-button>
       </form>
     </div>

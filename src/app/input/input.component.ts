@@ -17,7 +17,8 @@ export class InputComponent implements OnInit {
   @Input() title:string ="";
   @Input() placeHolder: string = "";
   @Input() type:string ="";
-  @Input() id:string =""
+  @Input() id:string ="";
+
   constructor(private router: Router) { }
   
 

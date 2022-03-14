@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
   username: any;
+  secondary:string='btn btn-info';
 
   constructor(
     private messageservice: MessageService,
