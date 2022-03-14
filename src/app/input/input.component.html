@@ -1,12 +1,11 @@
-<div [formGroup]="contact">
-  <label for="email" hidden class="form-label">{{ title }}</label>
+<div [formGroup]="formGroup">
+  <label for="id" hidden class="form-label">{{ title }}</label>
   <input
-    type="email"
+    [type]="type"
     class="form-control"
-    id="email"
+    [id]="id"
     [formControlName]="name"
     [placeholder]="placeHolder"
-    style="width: 100%; padding: 12px"
     required
   />
 </div>

@@ -13,6 +13,8 @@ export class SigninComponent implements OnInit {
   submit: string='Submit';
   emailAdress: string='Email Address';
   emailPassword: string='Password';
+  type:string ='email';
+  password:string='password'
   contact = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),

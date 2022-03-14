@@ -45,3 +45,7 @@ h5{
 .alert1{
     color: yellow;
 }
+.btn{
+    width: 100%;
+    background-color: green;
+}

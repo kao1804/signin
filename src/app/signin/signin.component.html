@@ -10,8 +10,10 @@
           <!-- <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" required>  -->
 
           <app-input
+            [type]="type"
+            [id]="type"
             [title]="emailAdress"
-            [contact]="contact"
+            [formGroup]="contact"
             [name]="'email'"
             [require]="true"
             [placeHolder]="'Email address'"
@@ -37,7 +39,8 @@
           <!-- <input type="password" class="form-control" id="exampleInputPassword1"  formControlName="password" required> -->
           <app-input
             [title]="emailPassword"
-            [contact]="contact"
+            [id]="password"
+            [formGroup]="contact"
             [name]="'password'"
             [placeHolder]="'Password'"
             [require]="true"
@@ -57,7 +60,6 @@
         <!-- <button type="submit" class="btn btn-primary" [disabled]="Contact.invalid" >Submit</button> -->
         <app-button
           [title]="submit"
-          [class]="'btn btn-success'"
           [disable]="contact.invalid"
           (actionClick)="onSubmit()"
         ></app-button>

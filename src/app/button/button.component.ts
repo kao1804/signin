@@ -11,7 +11,7 @@ export class ButtonComponent implements OnInit {
   @Input() disable: boolean = false;
   @Input() type: string = 'submit';
   @Output() actionClick: EventEmitter<any> = new EventEmitter();
-  @Input() class: string = '';
+  @Input() btnStyle: string = '';
 
   constructor() {}
   onClick() {
