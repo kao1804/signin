@@ -1,6 +1,10 @@
-
-<div >
-    <button [type] ="btn" class="btn btn-primary" [disabled]="disable"  (click)="addACtion()" >{{text}}</button>
+<div>
+  <button
+    [type]="type"
+    [disabled]="disable"
+    [ngClass]="class"
+    (click)="onClick()"
+  >
+    {{ title }}
+  </button>
 </div>
-
-

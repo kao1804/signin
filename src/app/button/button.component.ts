@@ -1,6 +1,5 @@
-import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControlName, FormGroup } from '@angular/forms';
-
 
 @Component({
   selector: 'app-button',
@@ -8,20 +7,16 @@ import { FormControlName, FormGroup } from '@angular/forms';
   templateUrl: './button.component.html',
 })
 export class ButtonComponent implements OnInit {
-  @Input() text: any;
-  @Input() disable :boolean = false;
-  @Input() btn :string = "submit";
-  @Output() actionButton: EventEmitter<any> = new EventEmitter;
+  @Input() title: any;
+  @Input() disable: boolean = false;
+  @Input() type: string = 'submit';
+  @Output() actionClick: EventEmitter<any> = new EventEmitter();
+  @Input() class: string = '';
 
-
-  constructor() {
-     
-   }
-   addACtion(){
-     this.actionButton.emit()
-   };
-
-  ngOnInit(): void {
+  constructor() {}
+  onClick() {
+    this.actionClick.emit();
   }
 
+  ngOnInit(): void {}
 }

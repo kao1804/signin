@@ -11,10 +11,11 @@ import { Router } from '@angular/router';
 })
 export class InputComponent implements OnInit {
 
-  @Input() Contact:any;
+  @Input() contact:any;
   @Input() require : boolean = false;
   @Input() name:any;
-  @Input() text:string ="";
+  @Input() title:string ="";
+  @Input() placeHolder: string = "";
   constructor(private router: Router) { }
   
 
