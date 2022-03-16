@@ -14,13 +14,13 @@
             [id]="type"
             [title]="emailAdress"
             [formGroup]="contact"
-            [name]="type"
+            [controlName]="type"
             [require]="true"
-            [placeHolder]="emailAdress"
+            [placeHolder]="emailAdress"  
           ></app-input>
         </div>
 
-        <div
+       <!-- <div
           class="alert"
           role="alert"
           *ngIf="
@@ -30,8 +30,8 @@
           "
         >
           Email is required
-        </div>
-        <div
+        </div>  -->
+        <!-- <div
           class="alert"
           role="alert"
           *ngIf="
@@ -39,7 +39,7 @@
           "
         >
           Must have at least 4 character
-        </div>
+        </div> -->
 
         <div>
           <h5>We'll never share your email with anyone else.</h5>
@@ -50,13 +50,14 @@
             [title]="emailPassword"
             [id]="password"
             [formGroup]="contact"
-            [name]="password"
+            [controlName]="password"
             [placeHolder]="emailPassword"
             [require]="true"
             [type]="password"
+            
           ></app-input>
 
-          <div
+          <!-- <div
             class="alert"
             role="alert"
             *ngIf="
@@ -65,14 +66,14 @@
             "
           >
             Password is required
-          </div>
+          </div> -->
         </div>
         <!-- <button type="submit" class="btn btn-primary" [disabled]="Contact.invalid" >Submit</button> -->
         <app-button
           [title]="submit"
           [disable]="contact.invalid"
           (actionClick)="onSubmit()"
-          [btnStyle]="primary"
+          btnStyle="btn-primary"
         ></app-button>
       </form>
     </div>

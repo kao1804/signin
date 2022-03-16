@@ -1,11 +1,40 @@
 <div [formGroup]="formGroup">
-  <label for="{{id}}" hidden class="form-label">{{ title }}</label>
+  <label for="{{ id }}" hidden class="form-label">{{ title }}</label>
   <input
     [type]="type"
     class="form-control"
     [id]="id"
-    [formControlName]="name"
+    [formControlName]="controlName"
     [placeholder]="placeHolder"
-    [required] = "require"
+    [required]="require"
   />
+
+  <div
+    class="alert"
+    role="alert"
+    *ngIf="
+      (controlName === 'email' || controlName.invalid) &&
+      formGroup.controls.email.touched
+    "
+  >
+    Email is required
+  </div>
+  <div
+    class="alert"
+    role="alert"
+    *ngIf="
+      (controlName === 'email' || controlName.invalid) &&
+      formGroup.controls.email.touched
+    "
+  >
+    Must have at least 4 character
+  </div>
+
+  <div
+    class="alert"
+    role="alert"
+    *ngIf="controlName === 'password' && formGroup.controls.password.touched"
+  >
+    Password is required
+  </div>
 </div>
