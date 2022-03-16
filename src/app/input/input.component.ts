@@ -22,6 +22,9 @@ export class InputComponent implements OnInit {
   @Input() placeHolder: string = '';
   @Input() type: string = '';
   @Input() id: string = '';  
+  @Input() alert: boolean = false;
+  @Input() alertContent: string = "";
+  @Input() emailAlert:string = "";
   constructor(private router: Router) {}
 
   ngOnInit(): void {}

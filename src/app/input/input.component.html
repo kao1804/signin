@@ -9,32 +9,11 @@
     [required]="require"
   />
 
-  <div
-    class="alert"
-    role="alert"
-    *ngIf="
-      (controlName === 'email' || controlName.invalid) &&
-      formGroup.controls.email.touched
-    "
-  >
-    Email is required
-  </div>
-  <div
-    class="alert"
-    role="alert"
-    *ngIf="
-      (controlName === 'email' || controlName.invalid) &&
-      formGroup.controls.email.touched
-    "
-  >
-    Must have at least 4 character
+  <div class="alert" role="alert" *ngIf="alert">
+    {{ alertContent }}
   </div>
 
-  <div
-    class="alert"
-    role="alert"
-    *ngIf="controlName === 'password' && formGroup.controls.password.touched"
-  >
-    Password is required
+  <div class="alert" role="alert" *ngIf="alert">
+    {{ emailAlert }}
   </div>
 </div>

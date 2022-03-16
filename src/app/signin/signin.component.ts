@@ -38,6 +38,23 @@ export class SigninComponent implements OnInit {
       queryParams: { data: this.contact.controls.email.value },
     });
   }
+  checkEmail() {
+    if (
+      (this.contact.controls.email?.errors?.required ||
+        this.contact.controls.email?.invalid) &&
+      this.contact.controls.email?.touched
+    )
+      return true;
+    return false;
+  }
+  checkPassword() {
+    if (
+      this.contact.controls.password?.errors?.required &&
+      this.contact.controls.password?.touched
+    )
+      return true;
+    return false;
+  }
 
   ngOnInit(): void {}
 }

@@ -16,11 +16,15 @@
             [formGroup]="contact"
             [controlName]="type"
             [require]="true"
-            [placeHolder]="emailAdress"  
+            [placeHolder]="emailAdress"
+            [alert]="checkEmail()"
+            alertContent="Email is required"
+            [alert]="checkEmail()"
+            emailAlert="Must have at least 4 character"
           ></app-input>
         </div>
 
-       <!-- <div
+        <!-- <div
           class="alert"
           role="alert"
           *ngIf="
@@ -54,7 +58,8 @@
             [placeHolder]="emailPassword"
             [require]="true"
             [type]="password"
-            
+            [alert]="checkPassword()"
+            alertContent="Password is invalid"
           ></app-input>
 
           <!-- <div
